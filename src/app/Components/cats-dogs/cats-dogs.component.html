@@ -1,0 +1,11 @@
+<p>Hola</p>
+<table>
+    <thead>
+        <th>Nombre</th>
+        <th>Status</th>
+    </thead>
+    <tbody *ngFor="let p of lista">
+        <td>{{p.results.name}}</td>
+        <td>{{p.results.status}}</td>
+    </tbody>
+</table>

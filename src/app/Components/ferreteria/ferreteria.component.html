@@ -1,0 +1,23 @@
+<div class="container text-center">
+    <table class="table table-responsive text-center table-hover">
+        <thead>
+            <tr>
+                <th>Nombre del producto</th>
+                <th>Nombre de la categoría</th>
+                <th>Costo del producto</th>
+                <th>País de origen</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prod of listaFerre">
+                <td>{{prod.nombProd}}</td>
+                <td>{{prod.categoria.nombCat}}</td>
+                <td>{{prod.costo}}</td>
+                <td>{{prod.paisOrigen}}</td>
+                <td><button class="btn btn-danger">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

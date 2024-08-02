@@ -1,0 +1,13 @@
+<div class="container">
+    <form (submit)="actualizar()">
+        <label class="form-label">Nombre:</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)] = "dato.nombre">
+        <label class="form-label">País:</label>
+        <input type="text" class="form-control" name="origen" [(ngModel)] = "dato.origen.pais">
+        <label class="form-label">Cantidad existente:</label>
+        <input type="text" class="form-control" name="cantidad" [(ngModel)] = "dato.cantidad_existente">
+        <div class="container text-center">
+            <button type="submit" class="btn btn-success mt-3" >Actualizar</button>
+        </div>
+    </form>
+</div>

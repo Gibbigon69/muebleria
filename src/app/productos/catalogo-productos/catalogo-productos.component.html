@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="container text-center">
+        <p class="fs-3">Catálogo de productos</p>
+    </div>
+    <table class="table table-responsive table-striped table-hover table-success">
+        <thead>
+            <tr>
+                <th scope="col">ProductoId</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Nombre Categoria</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Cantidad existente</th>
+                <th scope="col">costo</th>
+                <th scope="col">Pais:</th>
+                <th scope="col">Precio:</th>
+                <th scope="col">Prov_id:</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+    <tbody>
+        <tr *ngFor="let prod of listaProductos">
+            <td>{{prod._id}}</td>
+
+            <td><img src={{prod.foto}} class="imagenes-catalogo"></td>
+            <td>{{prod.nombre}}</td>
+            <td>{{prod.marca.nombremarca}}</td>
+            <td>{{prod.marca.modelo}}</td>
+            <td>{{prod.categoria.nombreCat}}</td>
+            <td>{{prod.categoria.descripcionCat}}</td>
+            <td>{{prod.cantidad_existente}}</td>
+            <td>{{prod.costo}}</td>
+            <td>{{prod.origen.pais}}</td>
+            <td>{{prod.precio}}</td>
+            <td>{{prod.provId}}</td>
+            
+
+            <td>
+                <button class="btn btn-success m-2" (click)="actualizarProducto(prod._id)">Actualizar</button>
+                <button class="btn btn-danger m-2" value="{{prod._id}}" (click)="eliminarProducto(prod._id)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+<div class="container text-center">
+    <div class="container">
+        <p class="fs-3">Catálogo Marcas</p>
+    </div>
+    <table class="table table-reponsive table-striped table-hover table-success">
+        <thead>
+            <tr>
+                <th>Nombre marca</th>
+                <th>Logo marca</th>
+                <th>RFC</th>
+                <th>Página Web</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody >
+
+            <tr *ngFor="let m of listaMarcas">
+                <td>{{m.nombreMarca}}</td>
+                <td><img src={{m.logo}} class="imagenes-catalogo"></td>
+                <td>{{m.RFC}}</td>
+                <td>{{m.paginaWeb}}</td>
+                
+                <td>
+                    <button class="btn btn-success m-2" (click)="actualizarMarca(m._id.$oid)">Actualizar</button>
+                    <button class="btn btn-danger m-2" value="{{m._id.$oid}}" (click)="eliminarMarca(m._id.$oid)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

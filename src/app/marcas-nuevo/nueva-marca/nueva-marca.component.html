@@ -1,0 +1,22 @@
+<div class="container text-center">
+    <h1>Crear nueva marca</h1>
+    <form (submit)="postMarca()">
+        <div class="container text-center border p-5">
+            <label class="form-label fw-bold">Nombre Marca:</label>
+            <input type="text" name="nombreMarca" class="form-control" placeholder="Nombre marca" [(ngModel)] ="objetoMarca.nombreMarca">
+        </div>
+        <div class="container text-center border p-5">
+            <label class="form-label fw-bold">Logo de la marca:</label>
+            <input type="file" class="form-control" id="foto" name="foto"  accept="image/*" (change)="convertir_B64($event)">
+        </div>
+        <div class="container text-center border p-5">
+            <label class="form-label fw-bold">RFC:</label>
+            <input type="text" class="form-control" id="rfc" name="rfc" [(ngModel)] ="objetoMarca.RFC">
+        </div>
+        <div class="container text-center border p-5">
+            <label class="form-label fw-bold">Página Web</label>
+            <input type="text" class="form-control" id="pagina" name="pagina" [(ngModel)] ="objetoMarca.paginaWeb">
+        </div>
+        <button class="btn btn-primary mt-3" type="submit">Enviar</button>
+    </form>
+</div>
