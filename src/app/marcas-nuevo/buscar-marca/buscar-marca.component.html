@@ -3,7 +3,7 @@
         <p class="fs-3">Buscar marca</p>
         <form (ngSubmit)="obtenerMarca()">
             <label class="form-label"></label>
-            <input type="text" class="form-control" name="nombreMarca" [(ngModel)] = "nombreMarca">
+            <input type="text" class="form-control" name="nombreMarca" [(ngModel)] = "nombreMarca" placeholder="Ingresar nombre">
             <button type="submit" class="btn btn-success">Buscar</button>
         </form>
         <ng-container *ngIf="error">
@@ -17,16 +17,14 @@
                         <th>Logo</th>
                         <th>RFC</th>
                         <th>Página Web</th>
-
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <tr *ngFor="let m of listaMarca">
-                        <td>{{m.nombreMarca}}</td>
-                        <td><img src={{m.logo}} class="imagenes-catalogo"></td>
-                        <td>{{m.RFC}}</td>
-                        <td>{{m.paginaWeb}}</td>
-
+                    <tr>
+                        <td>{{listaMarca.nombreMarca}}</td>
+                        <td><img src={{listaMarca.logo}} class="imagenes-catalogo"></td>
+                        <td>{{listaMarca.RFC}}</td>
+                        <td>{{listaMarca.paginaWeb}}</td>
                     </tr>
                 </tbody>
             </table>

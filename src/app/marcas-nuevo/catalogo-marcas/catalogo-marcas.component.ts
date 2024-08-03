@@ -10,16 +10,9 @@ import { MarcasService } from 'src/app/services/marcas/marcas.service';
 })
 export class CatalogoMarcasComponent {
   listaMarcas: Marcas[] = []
+  isLoading: boolean = false;
 
-  objetoMarca: Marcas ={
-    "_id": {
-      "$oid": ""
-  },
-  "nombreMarca": "",
-  "logo": "",
-  "RFC": "",
-  "paginaWeb": ""
-  }
+  objetoMarca: any = {}
 
   productoId: any | null = null;
   
@@ -32,9 +25,11 @@ export class CatalogoMarcasComponent {
   }
 
   mostrarMarcas(){
+    this.isLoading = true;
     this.MarcasService.obtenerMarcas()
     .subscribe((data: any) =>{
       this.listaMarcas = data;
+      this.isLoading = false;
     })
   }
   actualizarMarca(id: string){
@@ -43,15 +38,12 @@ export class CatalogoMarcasComponent {
   }
 
   eliminarMarca(id: string){
-    alert(id)
     const resultado = window.confirm('¿Estás seguro de que deseas eliminar la marca?');
     if(resultado){
       this.MarcasService.eliminarMarca(id)
-      .subscribe((data) =>{
-        console.log(data);
-        //window.location.reload();
+      .subscribe(() =>{
+        window.location.reload();
       })
-      //console.log(id);
     }
   }
 }

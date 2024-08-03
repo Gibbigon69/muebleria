@@ -18,10 +18,10 @@ export class ProveedoresService {
 
 
   obtenerProveedores(){
-    return this.http.get<Proveedores[]>('http://127.0.0.1:4000/proveedores/get_all')
+    return this.http.get<Proveedores[]>('https://api-muebleria.onrender.com/proveedores/get_all')
   }
   buscarProveedorNombre(nombre: string){
-    return this.http.get<Proveedores[]>('http://127.0.0.1:4000/proveedores/porNombre/' + nombre)
+    return this.http.get<Proveedores[]>('https://api-muebleria.onrender.com/proveedores/porNombre/' + nombre)
   }
   insertarProveedor(nuevoProveedor: any) {
     return this.http.post<any>('http://127.0.0.1:4000/proveedores/nuevoProv', nuevoProveedor)

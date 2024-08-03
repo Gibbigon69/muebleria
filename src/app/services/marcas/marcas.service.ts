@@ -10,11 +10,12 @@ export class MarcasService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerMarcaPorId(id: string){
-    return this.http.get<Marcas[]>('http://127.0.0.1:4000/marcas/porID/' + id)
+  obtenerMarcaPorId(id: string): Observable<any>{
+    {
+    return this.http.get<Marcas[]>('https://api-muebleria.onrender.com/marcas/porID/' + id)
   }
-
-  obtenerMarcas(){
+  }
+  obtenerMarcas(): Observable<any>{
     return this.http.get<Marcas[]>('https://api-muebleria.onrender.com/marcas/get_all')
   }
   mostrarModelos(marca: string){
@@ -22,7 +23,7 @@ export class MarcasService {
   }
 
   buscarMarca(nombre: string){
-    return this.http.get<Marcas[]>('http://127.0.0.1:4000/marcas/porNombre/' + nombre)
+    return this.http.get<Marcas[]>('https://api-muebleria.onrender.com/marcas/porNombre/' + nombre)
   }
 
   insertarMarcas(marca: Marcas) {
@@ -36,14 +37,13 @@ export class MarcasService {
       );
   }
   eliminarMarca(id: Object){
-    return this.http.delete<any>('http://127.0.0.1:4000/marcas/eliminar/' + id)
+    return this.http.delete<any>('https://api-muebleria.onrender.com/marcas/eliminar/' + id)
   }
   
   actualizarMarca(id: string, dato: Marcas): Observable<any>{
-    const apiUrl = "http://127.0.0.1:4000";
+    const apiUrl = "https://api-muebleria.onrender.com";
     const url= `${apiUrl}/marcas/actualizar/${id}`;
     console.log(id);
     return this.http.put<any>(url, dato);
-
 }
 }

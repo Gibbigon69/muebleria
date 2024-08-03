@@ -11,7 +11,7 @@ export class BuscarMarcaComponent {
   nombreMarca: string = "";
   status: boolean = false;
   error: boolean = false;
-  listaMarca: Marcas[] = [];
+  listaMarca: any;
 
   constructor(private MarcasService: MarcasService){}
 
@@ -20,16 +20,17 @@ export class BuscarMarcaComponent {
 
   obtenerMarca(){
     this.MarcasService.buscarMarca(this.nombreMarca)
-    .subscribe((data: any) =>{
-      
-      if(data.length === 2){
+    .subscribe((data: Object) =>{
+      console.log(data);
+      if(data == null){
         this.status = false;
         this.error = true;
       }else{
         this.status = true;
         this.error = false;
-        this.listaMarca = JSON.parse(data);
-        
+        this.listaMarca = data;
+        console.log(this.listaMarca);
+
       }
     })  
   }

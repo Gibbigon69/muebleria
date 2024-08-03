@@ -14,24 +14,16 @@ export class ActualizarMarcaComponent {
   
   productoActualizar: Marcas[] = []
   imagen1: any;
-  dato: any = {
-    "_id": "",
-    "nombreMarca": "",
-    "logo": "",
-    "RFC": "",
-    "paginaWeb": ""
-  }
+  dato: any;
   
   productoId: any | null = null;
   ngOnInit():void{
     this.productoId = this.router.snapshot.paramMap.get('id');
     if(this.productoId){
-      
       this.marcasService.obtenerMarcaPorId(this.productoId)
       .subscribe(producto =>{
-        this.productoActualizar = producto;
         this.dato = producto;
-        console.log(this.dato.RFC)
+        console.log(producto);
       }, error =>{
         console.log("Error al obtener el producto", error)
       });
@@ -40,14 +32,13 @@ export class ActualizarMarcaComponent {
   convertir_B64(event: any) {
     //alert(event.target.files[0].name)
     if (event.target.files && event.target.files[0])
-    {
-    var file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = e => this.imagen1 = reader.result;
-    reader.readAsDataURL(file);
-    
-    }
-    }
+      {
+        var file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = e => this.imagen1 = reader.result;
+        reader.readAsDataURL(file);
+      }
+  }
   actualizar(){
     this.dato.logo = this.imagen1;
     if(this.productoId && this.dato){
