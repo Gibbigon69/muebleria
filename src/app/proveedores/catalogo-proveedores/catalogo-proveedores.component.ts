@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CatalogoProveedoresComponent {
   listaProveedores: any [] = []
+  isLoading: boolean = true;
   
   objProveedor: any = {
     nombre: "",
@@ -29,7 +30,8 @@ export class CatalogoProveedoresComponent {
     .subscribe(data =>{
       console.log(data.length);
       this.listaProveedores = data;
-      
+      this.isLoading = false
+
     });
   }
   eliminarProveedores(id: string){

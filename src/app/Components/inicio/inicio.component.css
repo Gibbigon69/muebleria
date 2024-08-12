@@ -1,0 +1,48 @@
+.contenedor--principal{
+    background: 
+    radial-gradient(circle at right center, rgba(182, 179, 179, 0.5) 0%, rgba(231, 226, 226, 0) 70%),
+    #ffffff;
+    background-size: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background-position: center;
+    padding: 10px;
+    height: 100vh;
+}
+
+.button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.button--primary{
+    background-color: #49708a;
+    color: white;
+    font-weight: 500;
+}
+
+.button--secondary{
+    background-color: #ebf7f8;
+    color: black;
+    font-weight: 500;
+}
+
+.title{
+    font-size: 100px;
+}
+
+.seccion--inicial{
+    display: flex;
+    gap: 10px;
+}
+
+.seccion--parrafos{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.seccion--parrafos h5{
+    font-weight: bold;
+}

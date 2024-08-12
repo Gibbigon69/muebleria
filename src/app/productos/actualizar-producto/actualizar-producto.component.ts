@@ -13,24 +13,26 @@ export class ActualizarProductoComponent {
   constructor(private router: ActivatedRoute, private ruta: Router, private productoServicio: MueblesService){}
 
 productoActualizar: ProductosMuebles [] = []
-  dato: ProductosMuebles = {
-    "_id": {
-      "$oid" : ""
-    },
-    "nombre": "",
-    "categoria":{"nombreCat":"","zona": "", "descripcionCat": ""},
-    "marca":{"nombremarca":"","modelo":""},
-    "costo": 0,
-    "dimensiones":{"largo":"","alto":"", "ancho": ""},
-    "color": [],
-    "foto": "",
-    "fechaAdquisicion": '',
-    "cantidad_existente":0,
-    "status": "",
-    "material_de_fabricacion": [],
-    "origen":{"pais":"","idioma":""},
-    "marca_id": 0,
-    "provId" : ""}
+  // dato: ProductosMuebles = {
+  //   "_id": {
+  //     "$oid" : ""
+  //   },
+  //   "nombre": "",
+  //   "categoria":{"nombreCat":"","zona": "", "descripcionCat": ""},
+  //   "marca":{"nombremarca":"","modelo":""},
+  //   "costo": 0,
+  //   "dimensiones":{"largo":"","alto":"", "ancho": ""},
+  //   "color": [],
+  //   "foto": "",
+  //   "fechaAdquisicion": '',
+  //   "cantidad_existente":0,
+  //   "status": "",
+  //   "material_de_fabricacion": [],
+  //   "origen":{"pais":"","idioma":""},
+  //   "marca_id": 0,
+  //   "provId" : ""}
+
+    dato: any;  
 
     productoId: any | null = null;
 
@@ -41,6 +43,7 @@ productoActualizar: ProductosMuebles [] = []
         
         this.productoServicio.obtenerProductoPorId(this.productoId)
         .subscribe(producto =>{
+          console.log(producto)
           this.productoActualizar = producto;
           this.dato = producto;
         }, error =>{

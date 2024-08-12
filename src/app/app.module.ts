@@ -24,6 +24,9 @@ import { NuevoProveedorComponent } from './proveedores/nuevo-proveedor/nuevo-pro
 import { BuscarMarcaComponent } from './marcas-nuevo/buscar-marca/buscar-marca.component';
 import { NuevaMarcaComponent } from './marcas-nuevo/nueva-marca/nueva-marca.component';
 import { CatalogoProductosComponent } from './productos/catalogo-productos/catalogo-productos.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { DocumentacionComponent } from './Components/documentacion/documentacion.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { CatalogoProductosComponent } from './productos/catalogo-productos/catal
     FerreteriaComponent,
     MuebleriaComponent,
     CatalogoMarcasComponent,
-    CatalogoProductosComponent,    
+    CatalogoProductosComponent,
+    FooterComponent,
+    DocumentacionComponent,
+    InicioComponent,    
     
   ],
   imports: [

@@ -1,0 +1,25 @@
+.transparent{
+    
+    backdrop-filter: blur(20px); /* Aplica un desenfoque de 10px al fondo */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+
+}
+.item:hover{
+    background-color: white;
+    border-radius: 12px;
+    border: none;
+    color: black;
+
+    border: 1px solid #696868;
+}
+
+.button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #49708a;
+    color: white;
+    font-weight: 500;
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, of } from 'rxjs';
 import { Marcas } from 'src/app/Models/marcas.model';
 import { MarcasService } from 'src/app/services/marcas/marcas.service';
 
@@ -27,6 +28,12 @@ export class CatalogoMarcasComponent {
   mostrarMarcas(){
     this.isLoading = true;
     this.MarcasService.obtenerMarcas()
+    .pipe(
+      catchError(error =>{
+        alert("Ha ocurrido algo malo");
+        return of()
+      })
+    )
     .subscribe((data: any) =>{
       this.listaMarcas = data;
       this.isLoading = false;

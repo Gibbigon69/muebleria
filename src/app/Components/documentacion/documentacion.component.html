@@ -1,0 +1,155 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-sm-none d-md-block col-md-3 ml-2">
+                <div class="contenedor-scrolleable">
+                    <div class="item">
+                        <h3 class="fw-bold">Introducción</h3>
+                        <p>GraphQL</p>
+                        <p>REST</p>
+                        <p>Info y paginación</p>
+                        <p>GraphQL</p>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <h3 class="fw-bold">Muebles</h3>
+                        <p>Muebles Schema</p>
+                        <p>Obtener todos los muebles</p>
+                        <p>Obtener un solo mueble</p>
+                        <p>Obtener múltiples muebles</p>
+                        <p>Filtrar muebles</p>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <h3 class="fw-bold">Proveedores</h3>
+                        <p>Proveedores schema</p>
+                        <p>Obtener todos los proveedores</p>
+                        <p>Obtener un solo proveedor</p>
+                        <p>Obtener múltiples proveedores</p>
+                        <p>Filtrar proveedores</p>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <h3 class="fw-bold">Marcas</h3>
+                        <p>Marcas schema</p>
+                        <p>Obtener todas las marcas</p>
+                        <p>Obtener una sola marca</p>
+                        <p>Obtener múltiples marcas</p>
+                        <p>Filtrar marcas</p>
+                    </div>
+                </div>
+        </div>
+        <div class="contenedor-principal col-md-9 col-sm-12">
+            <h1 class="md: text-center">Documentación</h1>
+            <section>
+                <h3 class="fw-bold">Introducción</h3>
+                <p>Esta documentación te ayudará a familiarizarte con los recursos de la API de Muebles y te mostrará como realizar diferentes consultas, para que puedas aprovecharlas al máximo.</p>
+                <h3 class="fw-bold">REST</h3>
+                <strong>Base url: <a  href="#" class="fs-6 subrayado fw-light">https://api-muebleria.onrender.com</a></strong>
+                <p>La URL base contiene información sobre todos  los recursos de la API disponibles. Todas las solicitudes son solicitudes GET y pasan por https. Todas las repuestas devolverán datos en json.</p>
+                <pre class="language-shell text-white fs-5"><code class="language-shell"><span class="endpoint"><span class="request text-success fw-bold">GET </span>https://api-muebleria.onrender.com</span></code></pre>            
+                <pre class="language-shell text-warning text-start"><code> {{jsonString}} </code></pre>
+                <p>Actualmente hay tres recursos disponibles</p>
+                <ul>
+                    <li><span class="subrayado">Muebles:</span> usado para obtener todos los muebles</li>
+                    <li><span class="subrayado">Marcas:</span> usado para obtener todas las marcas</li>
+                    <li><span class="subrayado">Proveedores</span> usado para obtener todos los proveedores</li>
+                </ul>
+                <h3 class="fw-bold">Muebles</h3>
+                <p>Existe un total de <span class="bg-secondary p-1 text-light">180</span> muebles ordenados por id.</p>
+                <h3 class=fw-bold>Esquema de muebles</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Key</th>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>string</td>
+                            <td>Identificador único del producto</td>
+                        </tr>
+                        <tr>
+                            <td>nombre</td>
+                            <td>String</td>
+                            <td>Nombre del producto</td>
+                        </tr>
+                        <tr>
+                            <td>categoria</td>
+                            <td>object</td>
+                            <td>características de la categoría del producto</td>
+                        </tr>
+                        <tr>
+                            <td>marca</td>
+                            <td>object</td>
+                            <td>características de la marca del producto</td>
+                        </tr>
+                        <tr>
+                            <td>costo</td>
+                            <td>int</td>
+                            <td>costo del producto</td>
+                        </tr>
+                        <tr>
+                            <td>precio</td>
+                            <td>int</td>
+                            <td>precio del producto</td>
+                        </tr>
+                        <tr>
+                            <td>dimensiones</td>
+                            <td>object</td>
+                            <td>características de las dimensiones del producto</td>
+                        </tr>
+                        <tr>
+                            <td>color</td>
+                            <td>array</td>
+                            <td>características de los colores del producto</td>
+                        </tr>
+                        <tr>
+                            <td>foto</td>
+                            <td>string</td>
+                            <td>foto del producto</td>
+                        </tr>
+                        <tr>
+                            <td>fechaAdquisicion</td>
+                            <td>date</td>
+                            <td>fecha en la que fue adquirido el producto</td>
+                        </tr>
+                        <tr>
+                            <td>cantidad_existente</td>
+                            <td>string</td>
+                            <td>cantidad existente del producto</td>
+                        </tr>
+                        <tr>
+                            <td>status</td>
+                            <td>string</td>
+                            <td>status del producto</td>
+                        </tr>
+                        <tr>
+                            <td>material_de_fabricacion</td>
+                            <td>array</td>
+                            <td>tipo de materiales del producto</td>
+                        </tr>
+                        <tr>
+                            <td>origen</td>
+                            <td>object</td>
+                            <td>origen de donde proviene el producto</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 class="fw-bold">Obtener todos los productos</h3>
+                <p>Tu puedes acceder a toda la lista de productos usando el endpoint <code class="bg-secondary p-1 text-light language-shell">productos/get/all</code></p>
+                <section class="bg-dark mb-2 text-start">
+                    <pre class="language-json"><code>
+                        <span class="property">[</span>
+                        <span class="property">&#123;</span>
+                        <span class="property"> "info"</span>
+                    </code></pre>
+                    <code class="language-shell">{{jsonString}}</code>
+                </section>
+            </section>
+        </div>
+    </div>
+    
+</div>

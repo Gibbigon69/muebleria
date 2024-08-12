@@ -1,0 +1,35 @@
+.contenedor-principal{
+    display: block;
+    margin-left: 0;
+    
+}
+ .contenedor-scrolleable{
+    
+    width: auto;
+    height: 100vh;
+    overflow: auto; /* Permite el scroll dentro del contenedor */
+    position: sticky;
+    top: 80px;
+} 
+.language-shell{
+    background-color: rgb(45, 44, 44);
+    white-space: pre;
+}
+.subrayado{
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+.subrayado:hover{
+    color: orange;    
+    text-decoration: none;
+}
+
+.token{
+    background-color: #30a254;
+
+}
+
+.property{
+    color: #ff44ff;
+}

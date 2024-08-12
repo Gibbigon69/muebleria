@@ -12,8 +12,14 @@ import { BuscarMarcaComponent } from './marcas-nuevo/buscar-marca/buscar-marca.c
 import { ActualizarProductoComponent } from './productos/actualizar-producto/actualizar-producto.component';
 import { ActualizarProveedorComponent } from './proveedores/actualizar-proveedor/actualizar-proveedor.component';
 import { ActualizarMarcaComponent } from './marcas-nuevo/actualizar-marca/actualizar-marca.component';
+import { DocumentacionComponent } from './Components/documentacion/documentacion.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: InicioComponent
+  },
   {
     path: 'catalogoProductos',
     component: CatalogoProductosComponent
@@ -62,6 +68,10 @@ const routes: Routes = [
   {
     path: 'actualizarMarca/:id',
     component: ActualizarMarcaComponent
+  },
+  {
+    path: 'documentacion',
+    component: DocumentacionComponent
   }
 ];
 

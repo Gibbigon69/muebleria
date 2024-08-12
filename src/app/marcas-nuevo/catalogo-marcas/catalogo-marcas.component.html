@@ -1,9 +1,8 @@
 <div class="text-center mt-4" *ngIf="isLoading; else loaded">
     <div class="spinner-border" style="width: 5rem; height: 5rem;" *ngIf="isLoading; else loaded" role="status">
-        <span class="visually-hidden" style="width: 180px;">Cargando...</span>
     </div>
+    <p>Cargando marcas...</p>
 </div>
-
 <ng-template #loaded>
     <div class="container text-center">
         <div class="container">

@@ -13,23 +13,23 @@ export class MueblesService {
 
   obtenerProductoPorId(id: string): Observable<any>{
     const apiUrl = 'http://127.0.0.1:4000'
-    const url = `http://127.0.0.1:4000/productos/porID/${id}`
+    const url = `https://api-muebleria.onrender.com/productos/porID/${id}`
     return this.http.get<any>(url); 
   }
 
-  obtenerProductos(){
-    return this.http.get<ProductosMuebles[]>('http://127.0.0.1:4000/productos/get_all')
+  obtenerProductos(): Observable<any>{
+    return this.http.get<ProductosMuebles[]>('http://127.0.0.1:4000/products/get_all')
   }
   buscarProducto(id: number){
     
-    return this.http.get<ProductosMuebles[]>('http://127.0.0.1:4000/productos/porID/' + id,)
+    return this.http.get<ProductosMuebles[]>('https://api-muebleria.onrender.com/productos/porID/' + id,)
   }
 
   insertarProducto(miProd: ProductosMuebles): Observable<any>{ 
     
     const headers = { 'Content-Type': 'application/json' };
 
-    return this.http.post<any>("http://127.0.0.1:4000/productos/nuevoProd", miProd)
+    return this.http.post<any>("https://api-muebleria.onrender.com/productos/nuevoProd", miProd)
     .pipe( tap((res:any)=>{
       if (res.message=="Documento insertado"){
       console.log("servicio",res.message)
@@ -41,12 +41,12 @@ export class MueblesService {
       )
   }
   eliminarProduco(id: string){
-    return this.http.delete<any>("http://127.0.0.1:4000/productos/eliminar/" + id)
+    return this.http.delete<any>("https://api-muebleria.onrender.com/eliminar/" + id)
   }
 
   actualizarProducto(id: string, datos: ProductosMuebles){
 
-    const apiUrl = "http://127.0.0.1:4000";
+    const apiUrl = "https://api-muebleria.onrender.com/";
     const url= `${apiUrl}/productos/actualizar/${id}`;
     
     return this.http.put<any>(url, datos);
