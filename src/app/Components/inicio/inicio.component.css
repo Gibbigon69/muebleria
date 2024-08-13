@@ -1,9 +1,16 @@
+
+@font-face {
+    font-family: "FuentePrincipal";
+    src: url('../../../assets/fonts/fonnts.com-Suisse_Intl_Regular.ttf');    
+}
+
+
 .contenedor--principal{
+    font-family: "FuentePrincipal";
     background: 
-    radial-gradient(circle at right center, rgba(182, 179, 179, 0.5) 0%, rgba(231, 226, 226, 0) 70%),
+    radial-gradient(circle at right center, #d0e0eb 0%, rgba(231, 226, 226, 0) 70%),
     #ffffff;
     background-size: cover;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     background-position: center;
     padding: 10px;
     height: 100vh;
