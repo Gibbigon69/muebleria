@@ -4,12 +4,12 @@
     <p>Cargando marcas...</p>
 </div>
 <ng-template #loaded>
-    <div class="container text-center">
+    <div class="container contenedor text-center">
         <div class="container">
             <p class="fs-3">Catálogo Marcas</p>
         </div>
-        <table class="table table-reponsive table-striped table-hover table-success">
-            <thead>
+        <table class="table table-reponsive">
+            <thead class="">
                 <tr>
                     <th>Nombre marca</th>
                     <th>Logo marca</th>
@@ -27,8 +27,8 @@
                     <td>{{m.paginaWeb}}</td>
                     
                     <td>
-                        <button class="btn btn-success m-2" (click)="actualizarMarca(m._id.$oid)">Actualizar</button>
-                        <button class="btn btn-danger m-2" value="{{m._id.$oid}}" (click)="eliminarMarca(m._id.$oid)">Eliminar</button>
+                        <button class="button button--primary m-2" (click)="actualizarMarca(m._id.$oid)">Actualizar</button>
+                        <button class="button button--secondary m-2" value="{{m._id.$oid}}" (click)="eliminarMarca(m._id.$oid)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>

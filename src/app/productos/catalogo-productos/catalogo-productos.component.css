@@ -1,3 +1,14 @@
+
+@font-face {
+    font-family: "FontPrincipal";
+    src: url("../../../assets/fonts/fonnts.com-Suisse_Intl_Regular.ttf");
+}
+
+.contenedor{
+    font-family: "FontPrincipal";
+}
+
+
 .imagenes-catalogo{
     width: 150px;
     height: 150px;

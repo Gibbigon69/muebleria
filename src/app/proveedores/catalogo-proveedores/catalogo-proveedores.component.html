@@ -5,12 +5,12 @@
 </div>
 
 <ng-template #loaded>
-  <div class="container">
+  <div class="container contenedor">
       <div class="container text-center">
           <p class="fs-3">Catálogo de proveedores</p>
       </div>
       <div class="mt-2 text-center">
-          <table class="table table-responsive table-striped table-hover table-success">
+          <table class="table table-responsive">
               <thead>
                 <tr>
                   <th scope="col">Nombre</th>
@@ -27,8 +27,8 @@
                   <td>{{p.telefono}}</td>
                   <td>{{p.direccion.calle}}</td>
                   <td>
-                    <button class="btn btn-success m-2" value="{{p._id}}" (click)="navegarProveedor(p._id)">Actualizar</button>
-                    <button class="btn btn-danger m-2" value="{{p._id}}" (click)="eliminarProveedores(p._id)">Eliminar</button>
+                    <button class="button button--primary m-2" value="{{p._id}}" (click)="navegarProveedor(p._id)">Actualizar</button>
+                    <button class="button button--secondary" value="{{p._id}}" (click)="eliminarProveedores(p._id)">Eliminar</button>
                   </td>
   
   

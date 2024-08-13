@@ -18,7 +18,7 @@ export class MueblesService {
   }
 
   obtenerProductos(): Observable<any>{
-    return this.http.get<ProductosMuebles[]>('http://127.0.0.1:4000/products/get_all')
+    return this.http.get<ProductosMuebles[]>('https://api-muebleria.onrender.com/productos/get_all')
   }
   buscarProducto(id: number){
     

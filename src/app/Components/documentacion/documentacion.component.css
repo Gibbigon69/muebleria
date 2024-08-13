@@ -3,14 +3,17 @@
     margin-left: 0;
     
 }
- .contenedor-scrolleable{
-    
+ .contenedor-scrolleable{ 
     width: auto;
     height: 100vh;
-    overflow: auto; /* Permite el scroll dentro del contenedor */
+    overflow: scroll; /* Permite el scroll dentro del contenedor */
     position: sticky;
+    box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.2); /* Sombra sutil */
     top: 80px;
 } 
+.contenedor-scrolleable::-webkit-scrollbar{
+    display: none;
+}
 .language-shell{
     background-color: rgb(45, 44, 44);
     white-space: pre;
