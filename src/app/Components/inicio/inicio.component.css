@@ -36,10 +36,6 @@
     font-weight: 500;
 }
 
-.title{
-    font-size: 100px;
-}
-
 .seccion--inicial{
     display: flex;
     gap: 10px;

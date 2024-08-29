@@ -8,11 +8,14 @@ import { catchError, throwError, Observable } from 'rxjs';
 })
 export class MarcasService {
 
+  URL = "https://api-muebleria.onrender.com/";
+  URL_LOCAL = "http://127.0.0.1:4000/"
+
   constructor(private http: HttpClient) { }
 
   obtenerMarcaPorId(id: string): Observable<any>{
     {
-    return this.http.get<Marcas[]>('https://api-muebleria.onrender.com/marcas/porID/' + id)
+    return this.http.get<Marcas[]>( this.URL_LOCAL + 'marcas/porID/' + id)
   }
   }
   obtenerMarcas(): Observable<any>{
@@ -27,7 +30,7 @@ export class MarcasService {
   }
 
   insertarMarcas(marca: Marcas) {
-    return this.http.post('http://127.0.0.1:4000/marcas/anadir', marca)
+    return this.http.post(this.URL + 'marcas/anadir', marca)
       .pipe(
         catchError(error => {
           console.error('Error al insertar la marca:', error);

@@ -13,3 +13,24 @@
     width: 150px;
     height: 150px;
 }
+
+
+.button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.button--primary{
+    background-color: #49708a;
+    color: white;
+    font-weight: 500;
+}
+
+.button--secondary{
+    background-color: #ebf7f8;
+    color: black;
+    font-weight: 500;
+}

@@ -1,3 +1,9 @@
+.contenedor{
+    margin: 0;
+    max-width: none;
+    padding: 0;
+}
+
 .contenedor-principal{
     display: block;
     margin-left: 0;

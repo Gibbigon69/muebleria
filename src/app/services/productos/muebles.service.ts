@@ -11,9 +11,12 @@ export class MueblesService {
 
   constructor(private http:HttpClient) { }
 
+  URL_LOCAL = "http://127.0.0.1:4000";
+  BASE_URL = "https://api-muebleria.onrender.com/";
+  
   obtenerProductoPorId(id: string): Observable<any>{
     const apiUrl = 'http://127.0.0.1:4000'
-    const url = `https://api-muebleria.onrender.com/productos/porID/${id}`
+    const url = `${this.BASE_URL}productos/porID/${id}`
     return this.http.get<any>(url); 
   }
 
@@ -41,7 +44,7 @@ export class MueblesService {
       )
   }
   eliminarProduco(id: string){
-    return this.http.delete<any>("https://api-muebleria.onrender.com/eliminar/" + id)
+    return this.http.delete<any>(this.URL_LOCAL + "delete/" + id)
   }
 
   actualizarProducto(id: string, datos: ProductosMuebles){

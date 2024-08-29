@@ -37,6 +37,7 @@ export class CatalogoProductosComponent {
 
   eliminarProducto(id: string){
     const resultado = window.confirm('¿Estás seguro de que deseas eliminar el producto?');
+    console.log(id)
     if (resultado) {
       this.MueblesService.eliminarProduco(id)
       .subscribe((data) =>{
